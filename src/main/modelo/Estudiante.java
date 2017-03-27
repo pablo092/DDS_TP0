@@ -1,0 +1,67 @@
+package main.modelo;
+
+import java.util.List;
+
+public class Estudiante {
+	
+	private String nombre;
+	private String apellido;
+	private String gitUser;
+	private String legajo;
+	private List<Tarea> tareas;
+	
+	public Estudiante(String nombre, String apellido, String gitUser, String legajo, List<Tarea> tareas) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.gitUser = gitUser;
+		this.legajo = legajo;
+		this.tareas = tareas;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getGitUser() {
+		return gitUser;
+	}
+
+	public void setGitUser(String gitUser) {
+		this.gitUser = gitUser;
+	}
+
+	public String getLegajo() {
+		return legajo;
+	}
+
+	public void setLegajo(String legajo) {
+		this.legajo = legajo;
+	}
+
+	public List<Tarea> getTareas() {
+		return tareas;
+	}
+
+	public void setTareas(List<Tarea> tareas) {
+		this.tareas = tareas;
+	}
+
+	@Override
+	public String toString() {
+		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", gitUser=" + gitUser + ", legajo=" + legajo
+				+ ", tareas=" + tareas + "]";
+	}
+}
