@@ -1,6 +1,6 @@
 package main.modelo;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Estudiante {
 	
@@ -8,9 +8,9 @@ public class Estudiante {
 	private String apellido;
 	private String gitUser;
 	private String legajo;
-	private List<Tarea> tareas;
+	private ArrayList<Tarea> tareas;
 	
-	public Estudiante(String nombre, String apellido, String gitUser, String legajo, List<Tarea> tareas) {
+	public Estudiante(String nombre, String apellido, String gitUser, String legajo, ArrayList<Tarea> tareas) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -51,11 +51,11 @@ public class Estudiante {
 		this.legajo = legajo;
 	}
 
-	public List<Tarea> getTareas() {
+	public ArrayList<Tarea> getTareas() {
 		return tareas;
 	}
 
-	public void setTareas(List<Tarea> tareas) {
+	public void setTareas(ArrayList<Tarea> tareas) {
 		this.tareas = tareas;
 	}
 

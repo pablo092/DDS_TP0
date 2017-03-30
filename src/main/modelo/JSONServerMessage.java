@@ -1,4 +1,4 @@
-package com.bami.bamiapp.conn_handler;
+package main.modelo;
 
 import org.json.JSONException;
 import org.json.JSONObject;
