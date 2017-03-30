@@ -19,6 +19,10 @@ public class Estudiante {
 		this.tareas = tareas;
 	}
 
+	public Estudiante() {
+		
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
