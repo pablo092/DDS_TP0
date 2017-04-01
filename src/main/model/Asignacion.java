@@ -1,15 +1,15 @@
-package main.modelo;
+package main.model;
 
 import java.util.List;
 
-public abstract class Tarea {
+public abstract class Asignacion {
 	
 	private int id;
 	private String titulo;
 	private String descripcion;
 	private List<Nota> notas;
 	
-	public Tarea(int id, String titulo, String descripcion, List<Nota> notas) {
+	public Asignacion(int id, String titulo, String descripcion, List<Nota> notas) {
 		super();
 		this.id = id;
 		this.titulo = titulo;

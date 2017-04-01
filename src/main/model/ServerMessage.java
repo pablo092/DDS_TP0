@@ -1,4 +1,4 @@
-package main.modelo;
+package main.model;
 
 public interface ServerMessage
 {

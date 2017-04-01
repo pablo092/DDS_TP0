@@ -1,5 +1,5 @@
-package main.vista;
+package main.view;
 
-public class ConsultarNotasView {
+public class ConsultarAsignacionesView {
 
 }

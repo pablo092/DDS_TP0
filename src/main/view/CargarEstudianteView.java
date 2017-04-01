@@ -1,5 +1,5 @@
-package main.vista;
+package main.view;
 
-public class CargarNotasView {
+public class CargarEstudianteView {
 
 }

@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import com.sun.jersey.api.client.ClientResponse;
 
-import main.modelo.RequestService;
+import main.model.RequestService;
 
 public class Test_Lector_Notas {
 

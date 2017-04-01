@@ -1,6 +1,6 @@
 package main;
 
-import main.vista.ApplicationLector;
+import main.view.ApplicationLector;
 
 public class Main {
 

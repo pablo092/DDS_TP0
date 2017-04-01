@@ -1,4 +1,4 @@
-package main.modelo;
+package main.model;
 
 import java.util.ArrayList;
 
@@ -8,9 +8,9 @@ public class Estudiante {
 	private String apellido;
 	private String gitUser;
 	private String legajo;
-	private ArrayList<Tarea> tareas;
+	private ArrayList<Asignacion> tareas;
 	
-	public Estudiante(String nombre, String apellido, String gitUser, String legajo, ArrayList<Tarea> tareas) {
+	public Estudiante(String nombre, String apellido, String gitUser, String legajo, ArrayList<Asignacion> tareas) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -20,9 +20,9 @@ public class Estudiante {
 	}
 
 	public Estudiante() {
-		
-	}
 
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -55,11 +55,11 @@ public class Estudiante {
 		this.legajo = legajo;
 	}
 
-	public ArrayList<Tarea> getTareas() {
+	public ArrayList<Asignacion> getTareas() {
 		return tareas;
 	}
 
-	public void setTareas(ArrayList<Tarea> tareas) {
+	public void setTareas(ArrayList<Asignacion> tareas) {
 		this.tareas = tareas;
 	}
 
@@ -76,6 +76,6 @@ public class Estudiante {
 		    serverMessage.getStringFromKey("last_name"),
 		    serverMessage.getStringFromKey("code"),
 		    serverMessage.getStringFromKey("github_user"),
-		    new ArrayList<Tarea>());
+		    new ArrayList<Asignacion>());
 	}
 }
