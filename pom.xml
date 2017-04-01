@@ -4,7 +4,7 @@
 	<groupId>TP0</groupId>
 	<artifactId>TP0</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Lector_de_Notas</name>
+	<name>LectorDeNotas</name>
 
 	<dependencies>
 		<dependency>

@@ -42,13 +42,13 @@ public class RequestService {
         return response;
     }
     
-    public ClientResponse putStudent(){
+    public ClientResponse putStudent(String estudiante){
         ClientResponse response = this.client
         						  .resource(API_NOTAS)
         						  .path(RESOURCE_STUDENT)
         						  .header(AUTH_KEY, PREFIJO + TOKEN)
         						  .accept(MediaType.APPLICATION_JSON)
-        						  .put(ClientResponse.class);
+        						  .put(ClientResponse.class, estudiante);
         return response;
     }
     

@@ -2,7 +2,7 @@ package main.model;
 
 import java.util.ArrayList;
 
-public abstract class Asignacion {
+public class Asignacion {
 	
 	private int id;
 	private String titulo;
