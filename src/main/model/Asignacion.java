@@ -1,15 +1,15 @@
 package main.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public abstract class Asignacion {
 	
 	private int id;
 	private String titulo;
 	private String descripcion;
-	private List<Nota> notas;
+	private ArrayList<Nota> notas;
 	
-	public Asignacion(int id, String titulo, String descripcion, List<Nota> notas) {
+	public Asignacion(int id, String titulo, String descripcion, ArrayList<Nota> notas) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -41,11 +41,11 @@ public abstract class Asignacion {
 		this.descripcion = descripcion;
 	}
 
-	public List<Nota> getNotas() {
+	public ArrayList<Nota> getNotas() {
 		return notas;
 	}
 
-	public void setNotas(List<Nota> notas) {
+	public void setNotas(ArrayList<Nota> notas) {
 		this.notas = notas;
 	}
 

@@ -1,10 +1,10 @@
 package main.model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class TP extends Asignacion{
 
-	public TP(int id, String titulo, String descripcion, List<Nota> notas) {
+	public TP(int id, String titulo, String descripcion, ArrayList<Nota> notas) {
 		super(id, titulo, descripcion, notas);
 	}
 
