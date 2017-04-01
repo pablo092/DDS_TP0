@@ -8,13 +8,13 @@ import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.windows.MainWindow;
 
-import main.model.Estudiante;
+import main.viewmodel.LectorNotas;
 
 @SuppressWarnings("serial")
-public class ApplicationLector extends MainWindow<Estudiante>{
+public class LectorNotasView extends MainWindow<LectorNotas>{
 
-	public ApplicationLector() {
-		super(new Estudiante());
+	public LectorNotasView() {
+		super(new LectorNotas());
 	}
 
 	@Override
@@ -29,5 +29,9 @@ public class ApplicationLector extends MainWindow<Estudiante>{
 		new Button(mainPanel).setCaption("CONSULTAR DATOS");
 		
 		new Button(mainPanel).setCaption("CARGAR DATOS");
+	}
+	
+	public static void main(String[] args) {
+		new LectorNotasView().startApplication();
 	}
 }
