@@ -64,12 +64,4 @@ public class Estudiante {
 		return "Estudiante [nombre=" + nombre + ", apellido=" + apellido + ", gitUser=" + gitUser + ", legajo=" + legajo
 				+ ", asignaciones=" + asignaciones + "]";
 	}
-
-	public static Estudiante fromServerMessage(ServerMessage serverMessage) {
-		return new Estudiante(serverMessage.getStringFromKey("first_name"), 
-							  serverMessage.getStringFromKey("last_name"),
-							  serverMessage.getStringFromKey("code"), 
-							  serverMessage.getStringFromKey("github_user"),
-							  new ArrayList<Asignacion>());
-	}
 }

@@ -2,11 +2,11 @@ package main.viewmodel;
 
 public class LectorNotas {
 	
-	private void consultarDatosEstudiante() {
+	public void consultarDatosEstudiante() {
 		
-	};
+	}
 	
-	private void cargarDatosEstudiante() {
+	public void cargarDatosEstudiante() {
 		
-	};
+	}
 }
