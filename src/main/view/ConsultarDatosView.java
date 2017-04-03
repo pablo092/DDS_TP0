@@ -9,6 +9,8 @@ import org.uqbar.arena.widgets.tables.Table;
 import org.uqbar.arena.windows.Window;
 import org.uqbar.arena.windows.WindowOwner;
 
+import main.model.Asignacion;
+import main.model.Nota;
 import main.viewmodel.ConsultarDatos;
 
 @SuppressWarnings("serial")
@@ -43,11 +45,13 @@ public class ConsultarDatosView extends Window<ConsultarDatos>{
 		
 		new Label(mainPanel).setText("Asignaciones: ");
 		
-		new Table(mainPanel, null).bindValueToProperty("assignments");
+		Table<Asignacion> tareas = new Table<Asignacion>(mainPanel, Asignacion.class);
+		tareas.bindItemsToProperty("assignments");
 		
 		new Label(mainPanel).setText("Notas: ");
 		
-		new Table(mainPanel, null).bindValueToProperty("grades");
+		Table<Nota> notas = new Table<Nota>(mainPanel, Nota.class);
+		notas.bindItemsToProperty("grades");
 		
 		new Button(mainPanel).setCaption("CONSULTAR")
 							 .onClick(()-> this.getModelObject().consultarDatosEstudiante());
