@@ -28,10 +28,10 @@ public class LectorNotasView extends MainWindow<LectorNotas> {
 							.setBackground(Color.ORANGE);
 
 		new Button(mainPanel).setCaption("CONSULTAR DATOS")
-							 .onClick(()-> this.getModelObject().consultarDatosEstudiante());
+							 .onClick(()-> this.getModelObject().consultarDatosEstudiante(this));
 		
 		new Button(mainPanel).setCaption("CARGAR DATOS")
-							 .onClick(()-> this.getModelObject().cargarDatosEstudiante());
+							 .onClick(()-> this.getModelObject().cargarDatosEstudiante(this));
 	}
 	
 	public static void main(String[] args) {

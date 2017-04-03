@@ -6,22 +6,29 @@ import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.TextBox;
 import org.uqbar.arena.widgets.tables.Table;
-import org.uqbar.arena.windows.Window;
+import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
+import org.uqbar.ui.view.ErrorViewer;
 
 import main.model.Asignacion;
 import main.model.Nota;
 import main.viewmodel.ConsultarDatos;
 
 @SuppressWarnings("serial")
-public class ConsultarDatosView extends Window<ConsultarDatos>{
+public class ConsultarDatosView extends SimpleWindow<ConsultarDatos> implements ErrorViewer {
 
 	public ConsultarDatosView(WindowOwner owner, ConsultarDatos model) {
 		super(owner, model);
 	}
 
 	@Override
-	public void createContents(Panel mainPanel) {
+	protected void addActions(Panel actionsPanel) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void createFormPanel(Panel mainPanel) {
 		this.setTitle("CONSULTAR DATOS DE ESTUDIANTE");
 		this.setIconImage("src/main/icono.png");
 		
@@ -55,5 +62,6 @@ public class ConsultarDatosView extends Window<ConsultarDatos>{
 		
 		new Button(mainPanel).setCaption("CONSULTAR")
 							 .onClick(()-> this.getModelObject().consultarDatosEstudiante());
+		
 	}
 }

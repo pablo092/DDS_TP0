@@ -2,6 +2,11 @@ package main.model;
 
 import java.util.ArrayList;
 
+import org.uqbar.commons.utils.Observable;
+import org.uqbar.commons.utils.Transactional;
+
+@Transactional
+@Observable
 public class Estudiante {
 
 	private String nombre;
