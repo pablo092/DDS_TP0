@@ -6,8 +6,10 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.google.gson.Gson;
 import com.sun.jersey.api.client.ClientResponse;
 
+import main.model.Estudiante;
 import main.model.RequestService;
 
 /*
@@ -68,10 +70,9 @@ public class TestLectorNotas {
 
     @Test
     public void testActualizarEstudainte() throws Exception {
-    	json = "{\"code\": \"1214731\", "
-                + "\"first_name\": \"Pedro\", "
-                + "\"last_name\": \"Fulano\","
-                + "\"github_user\": \"pfulano23\"}";
+    	Gson gson = new Gson();
+    	Estudiante estudiante = new Estudiante("Pedro", "Fulano", "pfulano23", "1214731", null);
+    	json = gson.toJson(estudiante);	
     	ClientResponse response = this.requester.putStudent(json);
         assertEquals(response.getStatus(),201);
     }

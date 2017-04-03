@@ -1,5 +1,10 @@
 package main.viewmodel;
 
+import com.google.gson.Gson;
+
+import main.model.Estudiante;
+import main.model.RequestService;
+
 public class CargarDatos {
 	
 	private String code;
@@ -8,7 +13,13 @@ public class CargarDatos {
 	private String github_user;
 	
 	public void cargarDatosEstudiante() {
+		RequestService request = new RequestService();
+		Gson gson = new Gson();
 		
+		Estudiante estudiante = new Estudiante(first_name, last_name, github_user, code, null);
+		
+		String json = gson.toJson(estudiante);		
+		request.putStudent(json);		
 	}
 
 	public String getCode() {
