@@ -5,6 +5,7 @@ import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.TextBox;
+import org.uqbar.arena.widgets.tables.Column;
 import org.uqbar.arena.widgets.tables.Table;
 import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.WindowOwner;
@@ -24,6 +25,8 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 	protected void addActions(Panel actionsPanel) {
 		new Button(actionsPanel).setCaption("CONSULTAR")
 								.onClick(()-> this.getModelObject().consultarDatosEstudiante());
+		
+		new Button(actionsPanel).setCaption("CERRAR").onClick(this::cancel);
 		
 	}
 
@@ -52,12 +55,31 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		
 		new Label(mainPanel).setText("Asignaciones: ");
 		
-		Table<Asignacion> tareas = new Table<Asignacion>(mainPanel, Asignacion.class);
-		tareas.bindItemsToProperty("assignments");
+		Table<Asignacion> tableTareas = new Table<>(mainPanel, Asignacion.class);
+		
+		Column<Asignacion> columnaTitulo = new Column<Asignacion>(tableTareas);
+		columnaTitulo.setTitle("Título");
+		
+		Column<Asignacion> columnaDescripcion = new Column<Asignacion>(tableTareas);
+		columnaDescripcion.setTitle("Descripción");
+		
+		tableTareas.setHeight(300);
+		tableTareas.setWidth(600);
 		
 		new Label(mainPanel).setText("Notas: ");
+
+		Table<Nota> tableNotas = new Table<>(mainPanel, Nota.class);
 		
-		Table<Nota> notas = new Table<Nota>(mainPanel, Nota.class);
-		notas.bindItemsToProperty("grades");		
+		Column<Nota> columnaCalificacion = new Column<Nota>(tableNotas);
+		columnaCalificacion.setTitle("Calificación");
+		
+		Column<Nota> columnaFechaCreacion = new Column<Nota>(tableNotas);
+		columnaFechaCreacion.setTitle("Fecha de Creación");
+		
+		Column<Nota> columnaFechaModificacion = new Column<Nota>(tableNotas);
+		columnaFechaModificacion.setTitle("Fecha de Modificación");
+		
+		tableNotas.setHeight(300);
+		tableNotas.setWidth(600);
 	}
 }

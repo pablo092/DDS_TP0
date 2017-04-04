@@ -21,6 +21,8 @@ public class CargarDatosView extends Dialog<CargarDatos> {
 	protected void addActions(Panel actionsPanel) {
 		new Button(actionsPanel).setCaption("GUARDAR")
 		 						.onClick(()-> this.getModelObject().cargarDatosEstudiante());
+		
+		new Button(actionsPanel).setCaption("CERRAR").onClick(this::cancel);
 	}
 
 	@Override

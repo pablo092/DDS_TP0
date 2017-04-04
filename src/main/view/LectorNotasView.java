@@ -10,7 +10,6 @@ import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 
-import main.Main;
 import main.viewmodel.LectorNotas;
 
 @SuppressWarnings("serial")
@@ -25,10 +24,10 @@ public class LectorNotasView extends SimpleWindow<LectorNotas> {
 	protected void addActions(Panel actionsPanel) {
 		
 		new Button(actionsPanel).setCaption("CONSULTAR DATOS")
-								.onClick(this::consultarDatosEstudiante());
+								.onClick(this::consultarDatosEstudiante);
 
-//		new Button(actionsPanel).setCaption("CARGAR DATOS")
-//								.onClick(this.cargarDatosEstudiante());
+		new Button(actionsPanel).setCaption("CARGAR DATOS")
+								.onClick(this::cargarDatosEstudiante);
 		
 	}
 

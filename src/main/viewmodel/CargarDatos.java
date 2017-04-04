@@ -1,10 +1,13 @@
 package main.viewmodel;
 
+import org.uqbar.commons.utils.Observable;
+
 import com.google.gson.Gson;
 
 import main.model.Estudiante;
 import main.model.RequestService;
 
+@Observable
 public class CargarDatos {
 	
 	private String code;

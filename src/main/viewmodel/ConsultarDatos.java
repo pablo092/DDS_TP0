@@ -2,9 +2,12 @@ package main.viewmodel;
 
 import java.util.ArrayList;
 
+import org.uqbar.commons.utils.Observable;
+
 import main.model.Asignacion;
 import main.model.Nota;
 
+@Observable
 public class ConsultarDatos {
 	
 	private String code;
