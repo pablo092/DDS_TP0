@@ -81,5 +81,6 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		
 		tableNotas.setHeight(300);
 		tableNotas.setWidth(600);
+		tableNotas.setNumberVisibleRows(3);
 	}
 }
