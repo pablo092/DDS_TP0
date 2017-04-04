@@ -7,13 +7,12 @@ import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.windows.Dialog;
-import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 
 import main.viewmodel.LectorNotas;
 
 @SuppressWarnings("serial")
-public class LectorNotasView extends SimpleWindow<LectorNotas> {
+public class LectorNotasView extends Dialog<LectorNotas> {
 
 
 	public LectorNotasView(WindowOwner parent) {
@@ -34,11 +33,10 @@ public class LectorNotasView extends SimpleWindow<LectorNotas> {
 	@Override
 	protected void createFormPanel(Panel mainPanel) {
 		this.setTitle("LECTOR DE NOTAS");
-		this.setIconImage("src/main/icono.png");
 		
 		mainPanel.setLayout(new VerticalLayout());
 		
-		new Label(mainPanel).setText("BIENVENIDO!! \n SELECCIONE UNA OPCIÓN")
+		new Label(mainPanel).setText("SELECCIONE UNA OPCIï¿½N")
 							.setBackground(Color.ORANGE);		
 	}
 	

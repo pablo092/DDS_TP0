@@ -3,7 +3,7 @@ package main;
 import org.uqbar.arena.Application;
 import org.uqbar.arena.windows.Window;
 
-import main.view.LectorNotasView;
+import main.view.LoginView;
 
 public class Main extends Application {
 	
@@ -13,7 +13,7 @@ public class Main extends Application {
 
 	@Override
 	protected Window<?> createMainWindow() {
-		return new LectorNotasView(this);
+		return new LoginView(this);
 	}
 
 }
