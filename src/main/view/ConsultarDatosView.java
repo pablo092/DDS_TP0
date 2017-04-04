@@ -6,24 +6,24 @@ import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.TextBox;
 import org.uqbar.arena.widgets.tables.Table;
-import org.uqbar.arena.windows.SimpleWindow;
+import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.WindowOwner;
-import org.uqbar.ui.view.ErrorViewer;
 
 import main.model.Asignacion;
 import main.model.Nota;
 import main.viewmodel.ConsultarDatos;
 
 @SuppressWarnings("serial")
-public class ConsultarDatosView extends SimpleWindow<ConsultarDatos> implements ErrorViewer {
+public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 
-	public ConsultarDatosView(WindowOwner owner, ConsultarDatos model) {
-		super(owner, model);
+	public ConsultarDatosView(WindowOwner owner) {
+		super(owner, new ConsultarDatos());
 	}
 
 	@Override
 	protected void addActions(Panel actionsPanel) {
-		// TODO Auto-generated method stub
+		new Button(actionsPanel).setCaption("CONSULTAR")
+								.onClick(()-> this.getModelObject().consultarDatosEstudiante());
 		
 	}
 
@@ -58,10 +58,6 @@ public class ConsultarDatosView extends SimpleWindow<ConsultarDatos> implements 
 		new Label(mainPanel).setText("Notas: ");
 		
 		Table<Nota> notas = new Table<Nota>(mainPanel, Nota.class);
-		notas.bindItemsToProperty("grades");
-		
-		new Button(mainPanel).setCaption("CONSULTAR")
-							 .onClick(()-> this.getModelObject().consultarDatosEstudiante());
-		
+		notas.bindItemsToProperty("grades");		
 	}
 }

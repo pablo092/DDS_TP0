@@ -5,23 +5,22 @@ import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.Panel;
 import org.uqbar.arena.widgets.TextBox;
-import org.uqbar.arena.windows.SimpleWindow;
+import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.WindowOwner;
-import org.uqbar.ui.view.ErrorViewer;
 
 import main.viewmodel.CargarDatos;
 
 @SuppressWarnings("serial")
-public class CargarDatosView extends SimpleWindow<CargarDatos> implements ErrorViewer {
+public class CargarDatosView extends Dialog<CargarDatos> {
 
-	public CargarDatosView(WindowOwner owner, CargarDatos model) {
-		super(owner, model);
+	public CargarDatosView(WindowOwner owner) {
+		super(owner, new CargarDatos());
 	}
 
 	@Override
 	protected void addActions(Panel actionsPanel) {
-		// TODO Auto-generated method stub
-		
+		new Button(actionsPanel).setCaption("GUARDAR")
+		 						.onClick(()-> this.getModelObject().cargarDatosEstudiante());
 	}
 
 	@Override
@@ -46,9 +45,5 @@ public class CargarDatosView extends SimpleWindow<CargarDatos> implements ErrorV
 		new Label(mainPanel).setText("Usuario de GitHub: ");
 		
 		new TextBox(mainPanel).bindValueToProperty("github_user");
-		
-		new Button(mainPanel).setCaption("GUARDAR")
-							 .onClick(()-> this.getModelObject().cargarDatosEstudiante());
-		
 	}
 }
