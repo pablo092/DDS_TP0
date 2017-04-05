@@ -1,5 +1,6 @@
 package main.view;
 
+import org.uqbar.arena.layout.ColumnLayout;
 import org.uqbar.arena.layout.VerticalLayout;
 import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Label;
@@ -31,33 +32,36 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		this.setTitle("CONSULTAR DATOS DE ESTUDIANTE");
 		this.setIconImage("src/main/icono.png");
 		
+		Panel panel = new Panel(mainPanel);
+		panel.setLayout(new ColumnLayout(2));
+		
 		mainPanel.setLayout(new VerticalLayout());
 		
-		new Label(mainPanel).setText("Nombre: ");
+		new Label(panel).setText("Nombre: ");
 		
-		new TextBox(mainPanel).bindValueToProperty("first_name");
+		new TextBox(panel).bindValueToProperty("first_name");
 		
-		new Label(mainPanel).setText("Apellido: ");
+		new Label(panel).setText("Apellido: ");
 		
-		new TextBox(mainPanel).bindValueToProperty("last_name");
+		new TextBox(panel).bindValueToProperty("last_name");
 		
-		new Label(mainPanel).setText("Legajo: ");
+		new Label(panel).setText("Legajo: ");
 		
-		new TextBox(mainPanel).bindValueToProperty("code");
+		new TextBox(panel).bindValueToProperty("code");
 		
-		new Label(mainPanel).setText("Usuario de GitHub: ");
+		new Label(panel).setText("Usuario de GitHub: ");
 		
-		new TextBox(mainPanel).bindValueToProperty("github_user");
+		new TextBox(panel).bindValueToProperty("github_user");
 		
 		new Label(mainPanel).setText("Asignaciones: ");
 		
 		Table<Asignacion> tableTareas = new Table<>(mainPanel, Asignacion.class);
 		
 		Column<Asignacion> columnaTitulo = new Column<Asignacion>(tableTareas);
-		columnaTitulo.setTitle("Título");
+		columnaTitulo.setTitle("Tï¿½tulo");
 		
 		Column<Asignacion> columnaDescripcion = new Column<Asignacion>(tableTareas);
-		columnaDescripcion.setTitle("Descripción");
+		columnaDescripcion.setTitle("Descripciï¿½n");
 		
 		tableTareas.setHeight(300);
 		tableTareas.setWidth(600);
@@ -67,13 +71,13 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		Table<Nota> tableNotas = new Table<>(mainPanel, Nota.class);
 		
 		Column<Nota> columnaCalificacion = new Column<Nota>(tableNotas);
-		columnaCalificacion.setTitle("Calificación");
+		columnaCalificacion.setTitle("Calificaciï¿½n");
 		
 		Column<Nota> columnaFechaCreacion = new Column<Nota>(tableNotas);
-		columnaFechaCreacion.setTitle("Fecha de Creación");
+		columnaFechaCreacion.setTitle("Fecha de Creaciï¿½n");
 		
 		Column<Nota> columnaFechaModificacion = new Column<Nota>(tableNotas);
-		columnaFechaModificacion.setTitle("Fecha de Modificación");
+		columnaFechaModificacion.setTitle("Fecha de Modificaciï¿½n");
 		
 		tableNotas.setHeight(300);
 		tableNotas.setWidth(600);

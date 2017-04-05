@@ -1,5 +1,6 @@
 package main.view;
 
+import org.uqbar.arena.layout.ColumnLayout;
 import org.uqbar.arena.layout.VerticalLayout;
 import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Label;
@@ -30,22 +31,27 @@ public class CargarDatosView extends Dialog<CargarDatos> {
 		this.setTitle("CARGAR DATOS DE ESTUDIANTE");
 		this.setIconImage("src/main/icono.png");
 		
-		mainPanel.setLayout(new VerticalLayout());
+		Panel panel = new Panel(mainPanel);
+		panel.setLayout(new ColumnLayout(2));
 		
-		new Label(mainPanel).setText("Nombre: ");
+		/*var searchFormPanel = new Panel(mainPanel)
+	    searchFormPanel.setLayout(new ColumnLayout(2))
+        var labelNumber = new Label(searchFormPanel)*/
 		
-		new TextBox(mainPanel).bindValueToProperty("first_name");
+        new Label(panel).setText("Nombre: ");
 		
-		new Label(mainPanel).setText("Apellido: ");
+		new TextBox(panel).bindValueToProperty("first_name");
 		
-		new TextBox(mainPanel).bindValueToProperty("last_name");
+		new Label(panel).setText("Apellido: ");
 		
-		new Label(mainPanel).setText("Legajo: ");
+		new TextBox(panel).bindValueToProperty("last_name");
 		
-		new TextBox(mainPanel).bindValueToProperty("code");
+		new Label(panel).setText("Legajo: ");
 		
-		new Label(mainPanel).setText("Usuario de GitHub: ");
+		new TextBox(panel).bindValueToProperty("code");
 		
-		new TextBox(mainPanel).bindValueToProperty("github_user");
+		new Label(panel).setText("Usuario de GitHub: ");
+		
+		new TextBox(panel).bindValueToProperty("github_user");
 	}
 }
