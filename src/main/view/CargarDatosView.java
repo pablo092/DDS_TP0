@@ -34,24 +34,24 @@ public class CargarDatosView extends Dialog<CargarDatos> {
 		Panel panel = new Panel(mainPanel);
 		panel.setLayout(new ColumnLayout(2));
 		
-		/*var searchFormPanel = new Panel(mainPanel)
-	    searchFormPanel.setLayout(new ColumnLayout(2))
-        var labelNumber = new Label(searchFormPanel)*/
+		new Label(panel).setText("Nombre: ");
 		
-        new Label(panel).setText("Nombre: ");
-		
-		new TextBox(panel).bindValueToProperty("first_name");
+		new TextBox(panel).setWidth(100)
+		                  .bindValueToProperty("first_name");
 		
 		new Label(panel).setText("Apellido: ");
 		
-		new TextBox(panel).bindValueToProperty("last_name");
+		new TextBox(panel).setWidth(100)
+		                  .bindValueToProperty("last_name");
 		
 		new Label(panel).setText("Legajo: ");
 		
-		new TextBox(panel).bindValueToProperty("code");
+		new TextBox(panel).setWidth(100)
+		                  .bindValueToProperty("code");
 		
 		new Label(panel).setText("Usuario de GitHub: ");
 		
-		new TextBox(panel).bindValueToProperty("github_user");
+		new TextBox(panel).setWidth(100)
+		                  .bindValueToProperty("github_user");
 	}
 }

@@ -39,19 +39,23 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		
 		new Label(panel).setText("Nombre: ");
 		
-		new TextBox(panel).bindValueToProperty("first_name");
+		new TextBox(panel).setWidth(150)
+		                  .bindValueToProperty("first_name");
 		
 		new Label(panel).setText("Apellido: ");
 		
-		new TextBox(panel).bindValueToProperty("last_name");
+		new TextBox(panel).setWidth(150)
+		                  .bindValueToProperty("last_name");
 		
 		new Label(panel).setText("Legajo: ");
 		
-		new TextBox(panel).bindValueToProperty("code");
+		new TextBox(panel).setWidth(150)
+		                  .bindValueToProperty("code");
 		
 		new Label(panel).setText("Usuario de GitHub: ");
 		
-		new TextBox(panel).bindValueToProperty("github_user");
+		new TextBox(panel).setWidth(150)
+		                  .bindValueToProperty("github_user");
 		
 		new Label(mainPanel).setText("Asignaciones: ");
 		
