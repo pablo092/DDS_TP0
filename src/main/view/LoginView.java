@@ -6,7 +6,7 @@ import org.uqbar.arena.layout.VerticalLayout;
 import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Label;
 import org.uqbar.arena.widgets.Panel;
-import org.uqbar.arena.widgets.TextBox;
+import org.uqbar.arena.widgets.PasswordField;
 import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
@@ -39,7 +39,7 @@ public class LoginView extends SimpleWindow<Login> {
 		
 		new Label(mainPanel).setText("TOKEN: ");
 		
-		new TextBox(mainPanel).bindValueToProperty("token");
+		new PasswordField(mainPanel).bindValueToProperty("token");
 	}
 	
 	public void login() {
