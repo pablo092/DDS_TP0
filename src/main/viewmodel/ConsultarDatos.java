@@ -16,10 +16,6 @@ public class ConsultarDatos {
 	private String github_user;
 	private ArrayList<Asignacion> assignments;
 	private ArrayList<Nota> grades;
-	
-	public void consultarDatosEstudiante() {
-		
-	}
 
 	public String getCode() {
 		return code;

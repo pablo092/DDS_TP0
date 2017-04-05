@@ -4,11 +4,8 @@ import org.uqbar.commons.utils.Observable;
 
 @Observable
 public class Login {
-	private String token;
 	
-	public void loginToken(){
-		
-	}
+	private String token;
 	
 	public String getToken() {
 		return token;
@@ -17,5 +14,4 @@ public class Login {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	
 }

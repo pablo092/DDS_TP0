@@ -14,7 +14,6 @@ import main.viewmodel.LectorNotas;
 @SuppressWarnings("serial")
 public class LectorNotasView extends Dialog<LectorNotas> {
 
-
 	public LectorNotasView(WindowOwner parent) {
 		super(parent, new LectorNotas());
 	}
@@ -36,7 +35,7 @@ public class LectorNotasView extends Dialog<LectorNotas> {
 		
 		mainPanel.setLayout(new VerticalLayout());
 		
-		new Label(mainPanel).setText("SELECCIONE UNA OPCIï¿½N")
+		new Label(mainPanel).setText("SELECCIONE UNA OPCIÓN")
 							.setBackground(Color.ORANGE);		
 	}
 	

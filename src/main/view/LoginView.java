@@ -13,13 +13,11 @@ import org.uqbar.arena.windows.WindowOwner;
 
 import main.viewmodel.Login;
 
-//public class LoginView 
 @SuppressWarnings("serial")
 public class LoginView extends SimpleWindow<Login> {
 	
 	public LoginView(WindowOwner parent) {
 		super(parent, new Login());
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -36,7 +34,7 @@ public class LoginView extends SimpleWindow<Login> {
 		
 		mainPanel.setLayout(new VerticalLayout());
 		
-		new Label(mainPanel).setText("BIENVENIDO!! \n INGRESE UN TOKEN")
+		new Label(mainPanel).setText("BIENVENIDO!! \n INGRESE SU TOKEN")
 		.setBackground(Color.BLUE);	
 		
 		new Label(mainPanel).setText("TOKEN: ");
@@ -48,7 +46,4 @@ public class LoginView extends SimpleWindow<Login> {
 		Dialog<?> dialog = new LectorNotasView(this);
 		dialog.open();
 	}	
-
 }
-
-	

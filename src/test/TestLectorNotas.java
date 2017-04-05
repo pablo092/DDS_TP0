@@ -45,26 +45,26 @@ public class TestLectorNotas {
 
 	RequestService requester;
 	String json;
+	String token_prueba;
 
     @Before
     public void setUp() throws Exception {
         this.requester = new RequestService();
         this.json = new String();
+        token_prueba = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMTEyMjIzMzMiLCJybmQiOiJ5SXNmZFIwN2lIR3BRRmVjYU9KT2VRPT0ifQ.9pVJGUXhrJPQ-TptNCt971l0h_1dWqWgMrHAWXJchho";
     }
 
     @Test
     public void testObtenerEstudiante() throws Exception {
-        ClientResponse response = this.requester.getStudent();
+        ClientResponse response = this.requester.getStudent(token_prueba);
         json = response.getEntity(String.class);
-        assertTrue(json.contains("code"));
         assertTrue(json.contains("111222333"));
     }
     
     @Test
     public void testObtenerAsignaciones() throws Exception {
-    	ClientResponse response = this.requester.getAssignments();
+    	ClientResponse response = this.requester.getAssignments(token_prueba);
         json = response.getEntity(String.class);
-        assertTrue(json.contains("title"));
         assertTrue(json.contains("TPA1"));
     }
 
@@ -73,7 +73,7 @@ public class TestLectorNotas {
     	Gson gson = new Gson();
     	Estudiante estudiante = new Estudiante("Pedro", "Fulano", "pfulano23", "1214731", null);
     	json = gson.toJson(estudiante);	
-    	ClientResponse response = this.requester.putStudent(json);
-        assertEquals(response.getStatus(),201);
+    	ClientResponse response = this.requester.putStudent(json, token_prueba);
+        assertEquals(response.getStatus(), 201);
     }
 }

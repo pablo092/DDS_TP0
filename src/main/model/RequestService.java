@@ -13,43 +13,41 @@ public class RequestService {
     
     private static final String AUTH_KEY = "Authorization";
     
-//	ESTO SE VA A CAMBIAR LUEGO QUE NOS DEN EL TOKEN DEFINITIVO
     private static final String PREFIJO = "Bearer ";
-    private static final String TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMTEyMjIzMzMiLCJybmQiOiJ5SXNmZFIwN2lIR3BRRmVjYU9KT2VRPT0ifQ.9pVJGUXhrJPQ-TptNCt971l0h_1dWqWgMrHAWXJchho";
+//    private static final String TOKEN_PRUEBA = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMTEyMjIzMzMiLCJybmQiOiJ5SXNmZFIwN2lIR3BRRmVjYU9KT2VRPT0ifQ.9pVJGUXhrJPQ-TptNCt971l0h_1dWqWgMrHAWXJchho";
 
     public RequestService() {
         this.client = Client.create();
     }
 
-    public ClientResponse getStudent(){    	
+    public ClientResponse getStudent(String token){    	
     	ClientResponse response = this.client
     							  .resource(API_NOTAS)
     							  .path(RESOURCE_STUDENT)
-    							  .header(AUTH_KEY, PREFIJO + TOKEN)
+    							  .header(AUTH_KEY, PREFIJO + token)
     							  .accept(MediaType.APPLICATION_JSON)
     							  .get(ClientResponse.class);
         return response;
     }
 
-    public ClientResponse getAssignments(){
+    public ClientResponse getAssignments(String token){
         ClientResponse response = this.client
         						  .resource(API_NOTAS)
         						  .path(RESOURCE_STUDENT)
         						  .path(RESOURCE_ASSIGNMENTS)
-        						  .header(AUTH_KEY, PREFIJO + TOKEN)
+        						  .header(AUTH_KEY, PREFIJO + token)
         						  .accept(MediaType.APPLICATION_JSON)
         						  .get(ClientResponse.class);
         return response;
     }
     
-    public ClientResponse putStudent(String estudiante){
+    public ClientResponse putStudent(String estudiante, String token){
         ClientResponse response = this.client
         						  .resource(API_NOTAS)
         						  .path(RESOURCE_STUDENT)
-        						  .header(AUTH_KEY, PREFIJO + TOKEN)
+        						  .header(AUTH_KEY, PREFIJO + token)
         						  .accept(MediaType.APPLICATION_JSON)
         						  .put(ClientResponse.class, estudiante);
         return response;
     }
-    
 }

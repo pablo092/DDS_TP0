@@ -22,12 +22,8 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 	}
 
 	@Override
-	protected void addActions(Panel actionsPanel) {
-		new Button(actionsPanel).setCaption("CONSULTAR")
-								.onClick(()-> this.getModelObject().consultarDatosEstudiante());
-		
+	protected void addActions(Panel actionsPanel) {		
 		new Button(actionsPanel).setCaption("CERRAR").onClick(this::cancel);
-		
 	}
 
 	@Override
