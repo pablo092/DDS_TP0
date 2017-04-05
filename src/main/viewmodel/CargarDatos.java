@@ -22,10 +22,10 @@ public class CargarDatos{
 		RequestService request = new RequestService();
 		ClientResponse res = null;
 		JSONObject obj = null;
-		res = request.getStudent(Login.getToken_validado());
-
-		String json = res.getEntity(String.class);
+		String json = null;
 		
+		res = request.getStudent(Login.getToken_validado());
+		json = res.getEntity(String.class);
 		
 		try {
 			obj = new JSONObject(json);

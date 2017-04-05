@@ -62,10 +62,10 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		Table<Asignacion> tableTareas = new Table<>(mainPanel, Asignacion.class);
 		
 		Column<Asignacion> columnaTitulo = new Column<Asignacion>(tableTareas);
-		columnaTitulo.setTitle("Tï¿½tulo");
+		columnaTitulo.setTitle("Título").bindContentsToProperty("titulo");
 		
 		Column<Asignacion> columnaDescripcion = new Column<Asignacion>(tableTareas);
-		columnaDescripcion.setTitle("Descripciï¿½n");
+		columnaDescripcion.setTitle("Descripción").bindContentsToProperty("descripcion");
 		
 		tableTareas.setHeight(300);
 		tableTareas.setWidth(600);
@@ -75,13 +75,13 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		Table<Nota> tableNotas = new Table<>(mainPanel, Nota.class);
 		
 		Column<Nota> columnaCalificacion = new Column<Nota>(tableNotas);
-		columnaCalificacion.setTitle("Calificaciï¿½n");
+		columnaCalificacion.setTitle("Calificación").bindContentsToProperty("calificacion");
 		
 		Column<Nota> columnaFechaCreacion = new Column<Nota>(tableNotas);
-		columnaFechaCreacion.setTitle("Fecha de Creaciï¿½n");
+		columnaFechaCreacion.setTitle("Fecha de Creación").bindContentsToProperty("fechaCreacion");
 		
 		Column<Nota> columnaFechaModificacion = new Column<Nota>(tableNotas);
-		columnaFechaModificacion.setTitle("Fecha de Modificaciï¿½n");
+		columnaFechaModificacion.setTitle("Fecha de Modificación").bindContentsToProperty("fechaModificacion");
 		
 		tableNotas.setHeight(300);
 		tableNotas.setWidth(600);

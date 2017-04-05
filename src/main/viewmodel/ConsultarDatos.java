@@ -15,10 +15,15 @@ import main.model.RequestService;
 @Observable
 public class ConsultarDatos {
 	
-	private String code = new String();
-	private String first_name = new String();
-	private String last_name = new String();
-	private String github_user = new String();
+	private String code;
+	private String first_name;
+	private String last_name;
+	private String github_user;
+	private String titulo;
+	private String descripcion;
+	private String calificacion;
+	private String fechaCreacion;
+	private String fechaModificacion;
 	private ArrayList<Asignacion> assignments;
 	private ArrayList<Nota> grades;
 	
@@ -26,10 +31,10 @@ public class ConsultarDatos {
 		RequestService request = new RequestService();
 		ClientResponse res = null;
 		JSONObject obj = null;
-		res = request.getStudent(Login.getToken_validado());
-
-		String json = res.getEntity(String.class);
+		String json = null;
 		
+		res = request.getStudent(Login.getToken_validado());
+		json = res.getEntity(String.class);
 		
 		try {
 			obj = new JSONObject(json);
@@ -43,6 +48,19 @@ public class ConsultarDatos {
 		}
 		
 		res = request.getAssignments(Login.getToken_validado());
+		json = res.getEntity(String.class);
+		
+		try {
+			obj = new JSONObject(json);
+			
+			titulo = obj.getString("title");
+			descripcion = obj.getString("description");
+			calificacion = obj.getString("value");
+			fechaCreacion = obj.getString("created_at");
+			fechaModificacion = obj.getString("updated_at");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public String getCode() {
@@ -75,6 +93,46 @@ public class ConsultarDatos {
 
 	public void setGithub_user(String github_user) {
 		this.github_user = github_user;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public String getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(String calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	public String getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(String fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	public String getFechaModificacion() {
+		return fechaModificacion;
+	}
+
+	public void setFechaModificacion(String fechaModificacion) {
+		this.fechaModificacion = fechaModificacion;
 	}
 
 	public ArrayList<Asignacion> getAssignments() {
