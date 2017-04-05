@@ -71,7 +71,7 @@ public class TestLectorNotas {
     @Test
     public void testActualizarEstudainte() throws Exception {
     	Gson gson = new Gson();
-    	Estudiante estudiante = new Estudiante("Pedro", "Fulano", "pfulano23", "1214731", null);
+    	Estudiante estudiante = new Estudiante("Pedro", "Fulano", "pfulano23", "1214731");
     	json = gson.toJson(estudiante);	
     	ClientResponse response = this.requester.putStudent(json, token_prueba);
         assertEquals(response.getStatus(), 201);

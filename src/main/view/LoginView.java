@@ -24,7 +24,7 @@ public class LoginView extends SimpleWindow<Login> {
 	protected void addActions(Panel actionsPanel) {
 		
 		new Button(actionsPanel).setCaption("ACEPTAR")
-								.onClick(this::corroborarToken);
+								.onClick(this::login);
 	}
 	
 	@Override
@@ -42,8 +42,12 @@ public class LoginView extends SimpleWindow<Login> {
 		new TextBox(mainPanel).bindValueToProperty("token");
 	}
 	
-	public void corroborarToken() {
+	public void login() {
 		Dialog<?> dialog = new LectorNotasView(this);
-		dialog.open();
+		if(this.getModelObject().isValidToken()) {
+			dialog.open();
+		} else {
+//			ARROJO EL MENSAJE
+		}
 	}	
 }

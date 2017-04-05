@@ -15,13 +15,11 @@ public class Estudiante {
 	private String legajo;
 	private ArrayList<Asignacion> asignaciones;
 
-	public Estudiante(String nombre, String apellido, String gitUser, String legajo, ArrayList<Asignacion> asignaciones) {
-		super();
+	public Estudiante(String nombre, String apellido, String gitUser, String legajo) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.gitUser = gitUser;
 		this.legajo = legajo;
-		this.asignaciones = asignaciones;
 	}
 
 	public String getNombre() {
