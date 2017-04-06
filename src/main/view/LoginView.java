@@ -38,8 +38,9 @@ public class LoginView extends SimpleWindow<Login> {
 	}
 	
 	public void login() {
-		Dialog<?> dialog = new LectorNotasView(this);
+		Dialog<?> dialog = null;
 		if(this.getModelObject().isValidToken()) {
+			dialog = new LectorNotasView(this);
 			dialog.open();
 		} else {
 //			ARROJO EL MENSAJE
