@@ -39,22 +39,22 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		
 		new Label(panel).setText("Nombre: ");
 		
-		new TextBox(panel).setWidth(150)
+		new Label(panel).setWidth(150)
 		                  .bindValueToProperty("first_name");
 		
 		new Label(panel).setText("Apellido: ");
 		
-		new TextBox(panel).setWidth(150)
+		new Label(panel).setWidth(150)
 		                  .bindValueToProperty("last_name");
 		
 		new Label(panel).setText("Legajo: ");
 		
-		new TextBox(panel).setWidth(150)
+		new Label(panel).setWidth(150)
 		                  .bindValueToProperty("code");
 		
 		new Label(panel).setText("Usuario de GitHub: ");
 		
-		new TextBox(panel).setWidth(150)
+		new Label(panel).setWidth(150)
 		                  .bindValueToProperty("github_user");
 		
 		new Label(mainPanel).setText("Asignaciones: ");
@@ -62,10 +62,10 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		Table<Asignacion> tableTareas = new Table<>(mainPanel, Asignacion.class);
 		
 		Column<Asignacion> columnaTitulo = new Column<Asignacion>(tableTareas);
-		columnaTitulo.setTitle("Título").bindContentsToProperty("titulo");
+		columnaTitulo.setTitle("Tï¿½tulo").bindContentsToProperty("titulo");
 		
 		Column<Asignacion> columnaDescripcion = new Column<Asignacion>(tableTareas);
-		columnaDescripcion.setTitle("Descripción").bindContentsToProperty("descripcion");
+		columnaDescripcion.setTitle("Descripciï¿½n").bindContentsToProperty("descripcion");
 		
 		tableTareas.setHeight(300);
 		tableTareas.setWidth(600);
@@ -75,13 +75,13 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		Table<Nota> tableNotas = new Table<>(mainPanel, Nota.class);
 		
 		Column<Nota> columnaCalificacion = new Column<Nota>(tableNotas);
-		columnaCalificacion.setTitle("Calificación").bindContentsToProperty("calificacion");
+		columnaCalificacion.setTitle("Calificaciï¿½n").bindContentsToProperty("calificacion");
 		
 		Column<Nota> columnaFechaCreacion = new Column<Nota>(tableNotas);
-		columnaFechaCreacion.setTitle("Fecha de Creación").bindContentsToProperty("fechaCreacion");
+		columnaFechaCreacion.setTitle("Fecha de Creaciï¿½n").bindContentsToProperty("fechaCreacion");
 		
 		Column<Nota> columnaFechaModificacion = new Column<Nota>(tableNotas);
-		columnaFechaModificacion.setTitle("Fecha de Modificación").bindContentsToProperty("fechaModificacion");
+		columnaFechaModificacion.setTitle("Fecha de Modificaciï¿½n").bindContentsToProperty("fechaModificacion");
 		
 		tableNotas.setHeight(300);
 		tableNotas.setWidth(600);
