@@ -10,6 +10,7 @@ import org.uqbar.arena.windows.WindowOwner;
 
 import main.model.VentanaErroresViewModel;
 
+@SuppressWarnings("serial")
 public class VentanaErroresView extends Dialog<VentanaErroresViewModel> {
 	
 	private String mensajeError = null;

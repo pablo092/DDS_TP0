@@ -6,6 +6,8 @@ import com.google.gson.Gson;
 import com.sun.jersey.api.client.ClientResponse;
 
 import main.model.Estudiante;
+import main.view.CargarDatosView;
+import main.view.VentanaErroresView;
 
 @Observable
 public class CargarDatos{
@@ -22,7 +24,7 @@ public class CargarDatos{
 		github_user = Login.getEstudiante().getGitUser();
 	}
 	
-	public void cargarDatosEstudiante() {
+	public void cargarDatosEstudiante(CargarDatosView oCargarDatosView) {
 		ClientResponse res = null;
 		Gson gson = new Gson();
 		
@@ -33,6 +35,7 @@ public class CargarDatos{
 		
 		if(res.getStatus() == 201) {
 //			MUESTRO MENSAJE QUE SALIO BIEN
+			new VentanaErroresView(oCargarDatosView, "Se ha actualizado correctamente!!").open();
 		}
 	}
 

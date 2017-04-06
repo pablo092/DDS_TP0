@@ -1,5 +1,6 @@
 package main.viewmodel;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,16 +13,18 @@ import main.model.Nota;
 
 public class LectorNotas {
 	
-	private static List<Asignacion> asignaciones = new ArrayList<>();
-	private static List<Nota> notas = new ArrayList<>();
+	private static List<Asignacion> asignaciones;
+	private static List<Nota> notas;
 	
 	public LectorNotas() {		
+//		Type assignListType = new TypeToken<List<Asignacion>>(){}.getType();
 //		ClientResponse res = Login.getRequest().getAssignments(Login.getToken_validado());
 //		Gson gson = new Gson();
 //		String json = null;
 //		
+//		
 //		json = res.getEntity(String.class);
-//		asignaciones = gson.fromJson(json, new TypeToken<List<Asignacion>>(){}.getType());
+//		asignaciones = gson.fromJson(json, assignListType);
 	}
 
 	public static List<Asignacion> getAsignaciones() {

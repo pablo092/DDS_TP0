@@ -42,9 +42,6 @@ public class LoginView extends SimpleWindow<Login> {
 		if(this.getModelObject().isValidToken(this)) {
 			dialog = new LectorNotasView(this);
 			dialog.open();
-		} else {
-//			ARROJO EL MENSAJE
-			new VentanaErroresView(this, "Mensaje de Error 1").open();
 		}
 	}	
 }

@@ -13,17 +13,15 @@ import main.view.VentanaErroresView;
 @Observable
 public class Login {
 
-	private String token;
+	private String token = "";
 	
 	private static Estudiante estudiante;
 	private static String token_validado;
 	private static RequestService request = new RequestService();
 
-	public boolean isValidToken(LoginView oLoginView) {
-		
-		if (token.equalsIgnoreCase(" ") || token == null) {
-//			MOSTRAR MENSAJE QUE ESTA VACIO
-			new VentanaErroresView(oLoginView, "mensaje de error 2").open();
+	public boolean isValidToken(LoginView oLoginView) {		
+		if (token.equalsIgnoreCase("") || token == null) {
+			new VentanaErroresView(oLoginView, "Debe ingresar un token").open();
 			return false;
 		}
 		
@@ -36,14 +34,12 @@ public class Login {
 			estudiante = gson.fromJson(json, Estudiante.class);
 			
 			Login.token_validado = this.token.trim();
-			//MUESTRO QUE INICIE TODO Ok
-			new VentanaErroresView(oLoginView, "mensaje de error 3").open();
+			new VentanaErroresView(oLoginView, "Se ha loggeado correctamente!!").open();
 			
 			return true;
 			
 		}
-		//MUESTRO QUE OCURRIO UN ERROR
-		new VentanaErroresView(oLoginView, "mensaje de error 4").open();
+		new VentanaErroresView(oLoginView, "El token no es válido").open();
 		return false;
 	}
 
