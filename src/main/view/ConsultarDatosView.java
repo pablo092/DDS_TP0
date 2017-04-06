@@ -62,11 +62,11 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		tableTareas.bindItemsToProperty("assignments");
 		tableTareas.bindValueToProperty("selectedAssign");
 		
-//		Column<Asignacion> columnaTitulo = new Column<Asignacion>(tableTareas);
-//		columnaTitulo.setTitle("Título").bindContentsToProperty("selectedAssign.titulo");
-//		
-//		Column<Asignacion> columnaDescripcion = new Column<Asignacion>(tableTareas);
-//		columnaDescripcion.setTitle("Descripción").bindContentsToProperty("selectedAssign.descripcion");
+		Column<Asignacion> columnaTitulo = new Column<Asignacion>(tableTareas);
+		columnaTitulo.setTitle("Título").bindContentsToProperty("titulo");
+		
+		Column<Asignacion> columnaDescripcion = new Column<Asignacion>(tableTareas);
+		columnaDescripcion.setTitle("Descripción").bindContentsToProperty("descripcion");
 		
 		tableTareas.setHeight(300);
 		tableTareas.setWidth(600);
@@ -74,21 +74,20 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		new Label(mainPanel).setText("Notas: ");
 
 		Table<Nota> tableNotas = new Table<>(mainPanel, Nota.class);
-		tableNotas.bindItemsToProperty("grades");
-//		tableNotas.bindValueToProperty("selectedAssignGrades");
-//		tableNotas.bindSelectionToProperty("selectedAssign");
+		tableNotas.bindItemsToProperty("selectedAssign.notas");
+		tableNotas.bindValueToProperty("selectedGrade");
 		
-//		Column<Nota> columnaCalificacion = new Column<Nota>(tableNotas);
-//		columnaCalificacion.setTitle("Calificación").bindContentsToProperty("selectedAssignGrades.calificacion");
-//		
-//		Column<Nota> columnaFechaCreacion = new Column<Nota>(tableNotas);
-//		columnaFechaCreacion.setTitle("Fecha de Creación").bindContentsToProperty("selectedAssignGrades.fecha_creacion");
-//		
-//		Column<Nota> columnaFechaModificacion = new Column<Nota>(tableNotas);
-//		columnaFechaModificacion.setTitle("Fecha de Modificación").bindContentsToProperty("selectedAssignGrades.fecha_modificacion");
-//		
-//		tableNotas.setHeight(300);
-//		tableNotas.setWidth(600);
-//		tableNotas.setNumberVisibleRows(3);
+		Column<Nota> columnaCalificacion = new Column<Nota>(tableNotas);
+		columnaCalificacion.setTitle("Calificación").bindContentsToProperty("calificacion");
+		
+		Column<Nota> columnaFechaCreacion = new Column<Nota>(tableNotas);
+		columnaFechaCreacion.setTitle("Fecha de Creación").bindContentsToProperty("fecha_creacion");
+		
+		Column<Nota> columnaFechaModificacion = new Column<Nota>(tableNotas);
+		columnaFechaModificacion.setTitle("Fecha de Modificación").bindContentsToProperty("fecha_modificacion");
+		
+		tableNotas.setHeight(300);
+		tableNotas.setWidth(600);
+		tableNotas.setNumberVisibleRows(3);
 	}
 }

@@ -16,8 +16,8 @@ public class ConsultarDatos {
 	private String github_user;
 	private List<Asignacion> assignments;
 	private Asignacion selectedAssign;
-	private List<Nota> grades;
-	private Nota selectedAssignGrades;
+	private List<Nota> selectedAssignGrades;
+	private Nota selectedGrade;
 
 	public ConsultarDatos() {
 		code = Login.getEstudiante().getLegajo();
@@ -25,9 +25,6 @@ public class ConsultarDatos {
 		last_name = Login.getEstudiante().getApellido();
 		github_user = Login.getEstudiante().getGitUser();
 		assignments = LectorNotas.getAsignaciones();
-		selectedAssign = assignments.get(0);
-		grades = selectedAssign.getNotas();
-		selectedAssignGrades = grades.get(0);
 	}
 
 	public String getCode() {
@@ -78,19 +75,19 @@ public class ConsultarDatos {
 		this.selectedAssign = selectedAssign;
 	}
 
-	public List<Nota> getGrades() {
-		return grades;
-	}
-
-	public void setGrades(List<Nota> grades) {
-		this.grades = grades;
-	}
-
-	public Nota getSelectedAssignGrades() {
+	public List<Nota> getSelectedAssignGrades() {
 		return selectedAssignGrades;
 	}
 
-	public void setSelectedAssignGrades(Nota selectedAssignGrades) {
+	public void setSelectedAssignGrades(List<Nota> selectedAssignGrades) {
 		this.selectedAssignGrades = selectedAssignGrades;
+	}
+
+	public Nota getSelectedGrade() {
+		return selectedGrade;
+	}
+
+	public void setSelectedGrade(Nota selectedGrade) {
+		this.selectedGrade = selectedGrade;
 	}
 }

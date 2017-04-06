@@ -34,8 +34,10 @@ public class CargarDatos{
 		res = Login.getRequest().putStudent(json, Login.getToken_validado());
 		
 		if(res.getStatus() == 201) {
-//			MUESTRO MENSAJE QUE SALIO BIEN
 			new VentanaErroresView(oCargarDatosView, "Se ha actualizado correctamente!!").open();
+			oCargarDatosView.close();
+		} else {
+			new VentanaErroresView(oCargarDatosView, "No se ha podido actualizar").open();
 		}
 	}
 
