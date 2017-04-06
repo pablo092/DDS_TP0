@@ -5,7 +5,6 @@ import java.util.List;
 import org.uqbar.commons.utils.Observable;
 
 import main.model.Asignacion;
-import main.model.Nota;
 
 @Observable
 public class ConsultarDatos {
@@ -15,7 +14,6 @@ public class ConsultarDatos {
 	private String last_name;
 	private String github_user;
 	private List<Asignacion> assignments;
-	private List<Nota> grades;
 
 	public ConsultarDatos() {
 		code = Login.getEstudiante().getLegajo();
@@ -23,7 +21,6 @@ public class ConsultarDatos {
 		last_name = Login.getEstudiante().getApellido();
 		github_user = Login.getEstudiante().getGitUser();
 		assignments = LectorNotas.getAsignaciones();
-		grades = LectorNotas.getNotas();
 	}
 
 	public String getCode() {
@@ -64,13 +61,5 @@ public class ConsultarDatos {
 
 	public void setAssignments(List<Asignacion> assignments) {
 		this.assignments = assignments;
-	}
-
-	public List<Nota> getGrades() {
-		return grades;
-	}
-
-	public void setGrades(List<Nota> grades) {
-		this.grades = grades;
 	}
 }

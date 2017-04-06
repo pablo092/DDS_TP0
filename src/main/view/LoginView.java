@@ -34,7 +34,7 @@ public class LoginView extends SimpleWindow<Login> {
 		
 		new Label(mainPanel).setText("TOKEN: ");
 		
-		new PasswordField(mainPanel).setWidth(400).bindValueToProperty("token");
+		new PasswordField(mainPanel).setWidth(200).bindValueToProperty("token");
 	}
 	
 	public void login() {

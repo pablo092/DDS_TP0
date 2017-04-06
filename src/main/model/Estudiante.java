@@ -3,11 +3,9 @@ package main.model;
 import java.util.List;
 
 import org.uqbar.commons.utils.Observable;
-import org.uqbar.commons.utils.Transactional;
 
 import com.google.gson.annotations.SerializedName;
 
-@Transactional
 @Observable
 public class Estudiante {
 
