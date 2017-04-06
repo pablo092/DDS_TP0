@@ -34,8 +34,13 @@ public class LectorNotas {
 			List<Nota> notas = new ArrayList<>();
 			/*Recupero en un array el json de notas del elemento asignJson*/
 			jArrayGrade = (JsonArray) parser.parse(asignJson.getAsJsonObject().toString()).getAsJsonObject().get("grades");
-			for(JsonElement gradeJson : jArrayGrade) {
-				Nota nota = gson.fromJson(gradeJson, Nota.class);
+			Nota nota = new Nota(0, "Sin calificacion", "Sin fecha C", "Sin fecha M");
+			if(jArrayGrade.size() > 0) {
+				for(JsonElement gradeJson : jArrayGrade) {
+					nota = gson.fromJson(gradeJson, Nota.class);
+					notas.add(nota);
+				}
+			} else {
 				notas.add(nota);
 			}
 			

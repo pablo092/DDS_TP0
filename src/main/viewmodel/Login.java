@@ -35,7 +35,7 @@ public class Login {
 			
 			Login.token_validado = this.token.trim();
 			new VentanaErroresView(oLoginView, "Se ha loggeado correctamente!!").open();
-			
+			oLoginView.close();
 			return true;
 			
 		}
