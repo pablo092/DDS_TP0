@@ -7,6 +7,8 @@ import com.sun.jersey.api.client.ClientResponse;
 
 import main.model.Estudiante;
 import main.model.RequestService;
+import main.view.LoginView;
+import main.view.VentanaErroresView;
 
 @Observable
 public class Login {
@@ -17,10 +19,12 @@ public class Login {
 	private static String token_validado;
 	private static RequestService request = new RequestService();
 
-	public boolean isValidToken() {
+	public boolean isValidToken(LoginView oLoginView) {
 		
 		if (token.equalsIgnoreCase(" ") || token == null) {
 //			MOSTRAR MENSAJE QUE ESTA VACIO
+			new VentanaErroresView(oLoginView, "mensaje de error 2").open();
+			return false;
 		}
 		
 		ClientResponse res = request.getStudent(token.trim());
@@ -33,10 +37,13 @@ public class Login {
 			
 			Login.token_validado = this.token.trim();
 			//MUESTRO QUE INICIE TODO Ok
+			new VentanaErroresView(oLoginView, "mensaje de error 3").open();
+			
 			return true;
 			
 		}
 		//MUESTRO QUE OCURRIO UN ERROR
+		new VentanaErroresView(oLoginView, "mensaje de error 4").open();
 		return false;
 	}
 
