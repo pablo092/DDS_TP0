@@ -1,21 +1,24 @@
 package main.model;
 
-import java.util.Date;
-
 import org.uqbar.commons.utils.Observable;
 import org.uqbar.commons.utils.Transactional;
+
+import com.google.gson.annotations.SerializedName;
 
 @Transactional
 @Observable
 public class Nota {
 	
+	@SerializedName(value = "id")
 	private int id;
+	@SerializedName(value = "value")
 	private String calificacion;
-	private Date fecha_creacion;
-	private Date fecha_modificacion;
+	@SerializedName(value = "created_at")
+	private String fecha_creacion;
+	@SerializedName(value = "updated_at")
+	private String fecha_modificacion;
 	
-	public Nota(int id, String calificacion, Date fecha_creacion, Date fecha_modificacion) {
-		super();
+	public Nota(int id, String calificacion, String fecha_creacion, String fecha_modificacion) {
 		this.id = id;
 		this.calificacion = calificacion;
 		this.fecha_creacion = fecha_creacion;
@@ -38,19 +41,19 @@ public class Nota {
 		this.calificacion = calificacion;
 	}
 
-	public Date getFecha_creacion() {
+	public String getFecha_creacion() {
 		return fecha_creacion;
 	}
 
-	public void setFecha_creacion(Date fecha_creacion) {
+	public void setFecha_creacion(String fecha_creacion) {
 		this.fecha_creacion = fecha_creacion;
 	}
 
-	public Date getFecha_modificacion() {
+	public String getFecha_modificacion() {
 		return fecha_modificacion;
 	}
 
-	public void setFecha_modificacion(Date fecha_modificacion) {
+	public void setFecha_modificacion(String fecha_modificacion) {
 		this.fecha_modificacion = fecha_modificacion;
 	}
 

@@ -1,7 +1,5 @@
 package main.view;
 
-import java.awt.Color;
-
 import org.uqbar.arena.layout.VerticalLayout;
 import org.uqbar.arena.widgets.Button;
 import org.uqbar.arena.widgets.Label;
@@ -34,12 +32,9 @@ public class LoginView extends SimpleWindow<Login> {
 		
 		mainPanel.setLayout(new VerticalLayout());
 		
-		new Label(mainPanel).setText("BIENVENIDO!! \n INGRESE SU TOKEN")
-		.setBackground(Color.BLUE);	
-		
 		new Label(mainPanel).setText("TOKEN: ");
 		
-		new PasswordField(mainPanel).bindValueToProperty("token");
+		new PasswordField(mainPanel).setWidth(400).bindValueToProperty("token");
 	}
 	
 	public void login() {

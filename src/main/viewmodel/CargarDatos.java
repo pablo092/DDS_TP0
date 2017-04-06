@@ -1,14 +1,11 @@
 package main.viewmodel;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.uqbar.commons.utils.Observable;
 
 import com.google.gson.Gson;
 import com.sun.jersey.api.client.ClientResponse;
 
 import main.model.Estudiante;
-import main.model.RequestService;
 
 @Observable
 public class CargarDatos{
@@ -19,35 +16,24 @@ public class CargarDatos{
 	private String github_user;
 	
 	public CargarDatos() {
-		RequestService request = new RequestService();
-		ClientResponse res = null;
-		JSONObject obj = null;
-		String json = null;
-		
-		res = request.getStudent(Login.getToken_validado());
-		json = res.getEntity(String.class);
-		
-		try {
-			obj = new JSONObject(json);
-			
-			code = obj.getString("code");
-			first_name = obj.getString("first_name");
-			last_name = obj.getString("last_name");
-			github_user = obj.getString("github_user");
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		
+		code = Login.getEstudiante().getLegajo();
+		first_name = Login.getEstudiante().getNombre();
+		last_name = Login.getEstudiante().getApellido();
+		github_user = Login.getEstudiante().getGitUser();
 	}
 	
 	public void cargarDatosEstudiante() {
-		RequestService request = new RequestService();
+		ClientResponse res = null;
 		Gson gson = new Gson();
 		
 		Estudiante estudiante = new Estudiante(first_name, last_name, github_user, code);
 		
 		String json = gson.toJson(estudiante);		
-		request.putStudent(json, Login.getToken_validado());		
+		res = Login.getRequest().putStudent(json, Login.getToken_validado());
+		
+		if(res.getStatus() == 201) {
+//			MUESTRO MENSAJE QUE SALIO BIEN
+		}
 	}
 
 	public String getCode() {

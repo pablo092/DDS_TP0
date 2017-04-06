@@ -1,21 +1,26 @@
 package main.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.uqbar.commons.utils.Observable;
 import org.uqbar.commons.utils.Transactional;
+
+import com.google.gson.annotations.SerializedName;
 
 @Transactional
 @Observable
 public class Asignacion {
 	
+	@SerializedName(value = "id")
 	private int id;
+	@SerializedName(value = "title")
 	private String titulo;
+	@SerializedName(value = "description")
 	private String descripcion;
-	private ArrayList<Nota> notas;
+	@SerializedName(value = "grades")
+	private List<Nota> notas;
 	
-	public Asignacion(int id, String titulo, String descripcion, ArrayList<Nota> notas) {
-		super();
+	public Asignacion(int id, String titulo, String descripcion, List<Nota> notas) {
 		this.id = id;
 		this.titulo = titulo;
 		this.descripcion = descripcion;
@@ -46,11 +51,11 @@ public class Asignacion {
 		this.descripcion = descripcion;
 	}
 
-	public ArrayList<Nota> getNotas() {
+	public List<Nota> getNotas() {
 		return notas;
 	}
 
-	public void setNotas(ArrayList<Nota> notas) {
+	public void setNotas(List<Nota> notas) {
 		this.notas = notas;
 	}
 

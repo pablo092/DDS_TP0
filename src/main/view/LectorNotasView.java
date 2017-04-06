@@ -35,7 +35,7 @@ public class LectorNotasView extends Dialog<LectorNotas> {
 		
 		mainPanel.setLayout(new VerticalLayout());
 		
-		new Label(mainPanel).setText("SELECCIONE UNA OPCIÓN")
+		new Label(mainPanel).setText("BIENVENIDO!! \n SELECCIONE UNA OPCIÓN")
 							.setBackground(Color.ORANGE);		
 	}
 	
