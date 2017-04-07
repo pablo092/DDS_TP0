@@ -26,8 +26,11 @@ public class Nota {
 	}
 	
 	public boolean estaAprobado() {
-		/*TODO*/
-		return true;
+		try {
+			return Integer.parseInt(calificacion) > 4;
+		} catch (NumberFormatException e){
+			return !calificacion.contentEquals("M");
+		}
 	}
 
 	public int getId() {

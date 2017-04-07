@@ -30,21 +30,13 @@ public class LectorNotas {
 		jArrayAssign = (JsonArray) parser.parse(jsonTareas).getAsJsonObject().get("assignments");
 		/*Por cada asignacion del array itero*/
 		for (JsonElement asignJson : jArrayAssign) {
-			
 			List<Nota> notas = new ArrayList<>();
 			/*Recupero en un array el json de notas del elemento asignJson*/
-			jArrayGrade = (JsonArray) parser.parse(asignJson.getAsJsonObject().toString()).getAsJsonObject().get("grades");
-			
-			Nota nota = new Nota(0, null, null, null);
-			if(jArrayGrade.size() > 0) {
-				for(JsonElement gradeJson : jArrayGrade) {
-					nota = gson.fromJson(gradeJson, Nota.class);
-					notas.add(nota);
-				}
-			} else {
+			jArrayGrade = (JsonArray) parser.parse(asignJson.getAsJsonObject().toString()).getAsJsonObject().get("grades");		
+			for(JsonElement gradeJson : jArrayGrade) {
+				Nota nota = gson.fromJson(gradeJson, Nota.class);
 				notas.add(nota);
 			}
-			
             Asignacion asign = gson.fromJson(asignJson, Asignacion.class);
             /*Setteo las notas a la asignacion*/
             asign.setNotas(notas);
