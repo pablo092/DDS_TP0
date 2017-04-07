@@ -24,14 +24,6 @@ public class Nota {
 		this.fecha_creacion = fecha_creacion;
 		this.fecha_modificacion = fecha_modificacion;
 	}
-	
-	public boolean estaAprobado() {
-		try {
-			return Integer.parseInt(calificacion) > 4;
-		} catch (NumberFormatException e){
-			return !calificacion.contentEquals("M");
-		}
-	}
 
 	public int getId() {
 		return id;

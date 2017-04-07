@@ -68,6 +68,9 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		Column<Asignacion> columnaDescripcion = new Column<Asignacion>(tableTareas);
 		columnaDescripcion.setTitle("Descripción").bindContentsToProperty("descripcion");
 		
+		Column<Asignacion> columnaAprobado = new Column<Asignacion>(tableTareas);
+		columnaAprobado.setTitle("Aprobado").bindContentsToProperty("estaAprobado");
+		
 		tableTareas.setHeight(300);
 		tableTareas.setWidth(600);
 		
@@ -85,9 +88,6 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		
 		Column<Nota> columnaFechaModificacion = new Column<Nota>(tableNotas);
 		columnaFechaModificacion.setTitle("Fecha de Modificación").bindContentsToProperty("fecha_modificacion");
-		
-		Column<Nota> columnaAprobado = new Column<Nota>(tableNotas);
-		columnaAprobado.setTitle("Aprobado").bindContentsToProperty("estaAprobado");
 		
 		tableNotas.setHeight(300);
 		tableNotas.setWidth(600);
