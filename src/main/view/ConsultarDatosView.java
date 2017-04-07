@@ -62,6 +62,9 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		tableTareas.bindItemsToProperty("assignments");
 		tableTareas.bindValueToProperty("selectedAssign");
 		
+		Column<Asignacion> columnaNroTarea = new Column<Asignacion>(tableTareas);
+		columnaNroTarea.setTitle("Número de Asignación").bindContentsToProperty("id");
+		
 		Column<Asignacion> columnaTitulo = new Column<Asignacion>(tableTareas);
 		columnaTitulo.setTitle("Título").bindContentsToProperty("titulo");
 		
@@ -79,6 +82,9 @@ public class ConsultarDatosView extends Dialog<ConsultarDatos> {
 		Table<Nota> tableNotas = new Table<>(mainPanel, Nota.class);
 		tableNotas.bindItemsToProperty("selectedAssign.notas");
 		tableNotas.bindValueToProperty("selectedGrade");
+		
+		Column<Nota> columnaNroNota = new Column<Nota>(tableNotas);
+		columnaNroNota.setTitle("Número de Nota").bindContentsToProperty("id");
 		
 		Column<Nota> columnaCalificacion = new Column<Nota>(tableNotas);
 		columnaCalificacion.setTitle("Calificación").bindContentsToProperty("calificacion");
