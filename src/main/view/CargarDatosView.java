@@ -45,7 +45,7 @@ public class CargarDatosView extends Dialog<CargarDatos> {
 		
 		new Label(panel).setText("Legajo: ");
 		
-		new TextBox(panel).setWidth(100)
+		new Label(panel).setWidth(100)
 		                  .bindValueToProperty("code");
 		
 		new Label(panel).setText("Usuario de GitHub: ");

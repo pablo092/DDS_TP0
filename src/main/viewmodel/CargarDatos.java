@@ -35,6 +35,7 @@ public class CargarDatos{
 		
 		if(res.getStatus() == 201) {
 			new VentanaErroresView(oCargarDatosView, "Se ha actualizado correctamente!!").open();
+			Login.setEstudiante(estudiante);
 			oCargarDatosView.close();
 		} else {
 			new VentanaErroresView(oCargarDatosView, "No se ha podido actualizar").open();
