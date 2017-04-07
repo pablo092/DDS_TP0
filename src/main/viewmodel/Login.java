@@ -20,27 +20,35 @@ public class Login {
 	private static RequestService request = new RequestService();
 
 	public boolean isValidToken(LoginView oLoginView) {		
-		if (token.equalsIgnoreCase("") || token == null) {
-			new VentanaErroresView(oLoginView, "Debe ingresar un token").open();
-			return false;
-		}
 		
-		ClientResponse res = request.getStudent(token.trim());
 		Gson gson = new Gson();
 		String json = null;
-
-		if (res.getStatus() == 200) {
-			json = res.getEntity(String.class);
-			estudiante = gson.fromJson(json, Estudiante.class);
-			
-			Login.token_validado = this.token.trim();
-			new VentanaErroresView(oLoginView, "Se ha loggeado correctamente!!").open();
-			oLoginView.close();
-			return true;
-			
+		boolean ok = false;
+		
+		if (token.equalsIgnoreCase("") || token == null) {
+			new VentanaErroresView(oLoginView, "Debe ingresar un token").open();
+			return ok;
 		}
-		new VentanaErroresView(oLoginView, "El token no es válido").open();
-		return false;
+
+		try {
+			ClientResponse res = request.getStudent(token.trim());
+			
+			if (res.getStatus() == 200) {
+				json = res.getEntity(String.class);
+				estudiante = gson.fromJson(json, Estudiante.class);
+				
+				Login.token_validado = this.token.trim();
+				new VentanaErroresView(oLoginView, "Se ha loggeado correctamente!!").open();
+				oLoginView.close();
+				ok = true;
+			} else {
+				new VentanaErroresView(oLoginView, "El token no es válido").open();
+			}
+			
+		} catch (Exception e) {
+			new VentanaErroresView(oLoginView, "No se pudo establecer conexión \n" + e.getMessage()).open();
+		}
+		return ok;
 	}
 
 	public static String getToken_validado() {

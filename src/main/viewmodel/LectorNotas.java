@@ -18,30 +18,34 @@ public class LectorNotas {
 	
 	public LectorNotas() {
 		asignaciones = new ArrayList<>();
-		ClientResponse res = Login.getRequest().getAssignments(Login.getToken_validado());
 		Gson gson = new Gson();
 		JsonParser parser = new JsonParser();
 		JsonArray jArrayAssign = null;
 		JsonArray jArrayGrade = null;
 		String jsonTareas = null;
 		
-		jsonTareas = res.getEntity(String.class);
-		/*Recupero en un array el json de asignaciones*/
-		jArrayAssign = (JsonArray) parser.parse(jsonTareas).getAsJsonObject().get("assignments");
-		/*Por cada asignacion del array itero*/
-		for (JsonElement asignJson : jArrayAssign) {
-			List<Nota> notas = new ArrayList<>();
-			/*Recupero en un array el json de notas del elemento asignJson*/
-			jArrayGrade = (JsonArray) parser.parse(asignJson.getAsJsonObject().toString()).getAsJsonObject().get("grades");		
-			for(JsonElement gradeJson : jArrayGrade) {
-				Nota nota = gson.fromJson(gradeJson, Nota.class);
-				notas.add(nota);
+		try {
+			ClientResponse res = Login.getRequest().getAssignments(Login.getToken_validado());
+			jsonTareas = res.getEntity(String.class);
+			/*Recupero en un array el json de asignaciones*/
+			jArrayAssign = (JsonArray) parser.parse(jsonTareas).getAsJsonObject().get("assignments");
+			/*Por cada asignacion del array itero*/
+			for (JsonElement asignJson : jArrayAssign) {
+				List<Nota> notas = new ArrayList<>();
+				/*Recupero en un array el json de notas del elemento asignJson*/
+				jArrayGrade = (JsonArray) parser.parse(asignJson.getAsJsonObject().toString()).getAsJsonObject().get("grades");		
+				for(JsonElement gradeJson : jArrayGrade) {
+					Nota nota = gson.fromJson(gradeJson, Nota.class);
+					notas.add(nota);
+				}
+			    Asignacion asign = gson.fromJson(asignJson, Asignacion.class);
+			    /*Setteo las notas a la asignacion*/
+			    asign.setNotas(notas);
+			    asignaciones.add(asign);
 			}
-            Asignacion asign = gson.fromJson(asignJson, Asignacion.class);
-            /*Setteo las notas a la asignacion*/
-            asign.setNotas(notas);
-            asignaciones.add(asign);
-        }
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	public static List<Asignacion> getAsignaciones() {
