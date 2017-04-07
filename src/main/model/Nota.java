@@ -17,13 +17,17 @@ public class Nota {
 	private String fecha_creacion;
 	@SerializedName(value = "updated_at")
 	private String fecha_modificacion;
-	@SerializedName(value = "aprob")
-	private String aprobo;
+	
 	public Nota(int id, String calificacion, String fecha_creacion, String fecha_modificacion) {
 		this.id = id;
 		this.calificacion = calificacion;
 		this.fecha_creacion = fecha_creacion;
 		this.fecha_modificacion = fecha_modificacion;
+	}
+	
+	public boolean estaAprobado() {
+		/*TODO*/
+		return true;
 	}
 
 	public int getId() {
@@ -56,14 +60,6 @@ public class Nota {
 
 	public void setFecha_modificacion(String fecha_modificacion) {
 		this.fecha_modificacion = fecha_modificacion;
-	}
-
-	public String getAprobo() {
-		return aprobo;
-	}
-
-	public void setAprobo(String aprobo) {
-		this.aprobo = aprobo;
 	}
 
 	@Override
